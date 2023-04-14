@@ -1,6 +1,12 @@
 import sqlite3
 
-def manual_command(command_string):
+def update_phone_number_2(name):
+
+    command_string=f"""
+    UPDATE BORROWER
+    SET phone="837-721-8965"
+    WHERE name = "{name}"
+    """
     # connecting to the database
     connection = sqlite3.connect("LMS.db")
 
@@ -18,9 +24,4 @@ def manual_command(command_string):
     connection.close()
     return results
 
-command="""
-    UPDATE BORROWER
-    SET phone="837-721-8965"
-    WHERE name = "John Smith"
-"""
-manual_command(command)
+update_phone_number_2("John Smith")
