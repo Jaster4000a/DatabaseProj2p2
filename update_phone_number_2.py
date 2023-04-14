@@ -20,5 +20,6 @@ def manual_command(command_string):
 command="""
     UPDATE BORROWER
     SET phone=837-721-8965
+    WHERE name = mes
 """
 manual_command(command)
