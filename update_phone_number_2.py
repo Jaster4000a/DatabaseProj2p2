@@ -14,12 +14,13 @@ def manual_command(command_string):
     results = crsr.fetchall()
     for result in results:
         print(result)
+    connection.commit()
     connection.close()
     return results
 
 command="""
     UPDATE BORROWER
-    SET phone=837-721-8965
-    WHERE name = mes
+    SET phone="837-721-8965"
+    WHERE name = "John Smith"
 """
 manual_command(command)
